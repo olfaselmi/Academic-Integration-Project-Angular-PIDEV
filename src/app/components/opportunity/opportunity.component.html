@@ -1,0 +1,31 @@
+<html class="background">
+    <div class="opportunity-section" >
+        <table class="table-bordered" style="width: 100%;">
+            <thead>
+            <tr>
+            <th>id Opportunity</th>
+            <th>description</th>
+            <th>date</th>
+            <th>typeo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let u of Listopportunities">
+            <th scope="row">{{u.idOpportunity}}</th>
+            <td>{{u.description}}</td>
+            <td>{{u.date}}</td>
+            <td>{{u.typeo}}</td>
+            
+            <td><button (click)="deleteOpportunity(u.idOpportunity)" type="button" class="btn btn-danger"> <i class="fa fa-trash"></i></button> <div class=""></div>
+         </tr>
+        
+            </tbody>
+        
+        </table> 
+        <div>
+            <div scope="col">  <button class="btn btn-primary " (click)="showForm()">Add opportunity</button></div>
+           <app-addopportunity (aded)="addOpportunity($event)" *ngIf="showAdd"></app-addopportunity>
+       </div>
+    </div>
+</html>
+

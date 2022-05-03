@@ -1,0 +1,44 @@
+<div class="section">
+    <form class="" [formGroup]="myForm" (ngSubmit)="edit()">
+        <input formControlName="iPlanning"  formControlName="idPlanning" >  
+        <div class="form-group">
+         
+        
+    <div> 
+ <label>description</label>
+            <input type="text"   class="form-control" formControlName="description"> 
+    </div>   
+           
+        <div>
+ <label>schedule</label>
+            <input type="date"   class="form-control" formControlName="schedule"> 
+        </div>    
+           
+      <div>  
+            <label>
+                day</label>
+                <select name="day" formControlName="day" > 
+                    <option value="Monday"> Buy a Franchise</option> 
+                    <option value="Tuesday"> Selling</option>  
+                    <option value="Wednesday"> Buy a Franchise</option> 
+                    <option value="Thursday"> Selling</option>  
+                    <option value="Friday"> Buy a Franchise</option> 
+                    <option value="Saturday"> Selling</option>  
+                    <option value="sunday"> Buy a Franchise</option> 
+                  
+                   </select>
+            
+           </div> 
+            
+        </div> 
+      
+       
+       <div> 
+            <input type="submit" class="btn btn-primary" value="Update planning " style="margin-top: 2%;" >     
+       </div>   
+       
+       <div> <input type="submit" class="btn btn-danger" routerLink="/view" value="annuler" style="margin-top: 2%;">   </div>  
+    </form>
+    </div>
+    
+    

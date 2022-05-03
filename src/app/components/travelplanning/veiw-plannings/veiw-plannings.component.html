@@ -1,0 +1,51 @@
+<div> Search: <input type="text" [(ngModel)]="searchVal"/> </div>
+  
+      <table class="table table-bordered table-striped table-hover"  style="color:rgb(0, 0, 0);  table-layout: auto;max-height: 500px; width: 100%;">
+            <thead>
+            <tr>
+            <th>idPlanning</th>
+            <th>day</th>
+            <th>description</th>
+            <th>schedule</th>
+            
+            </tr>
+            </thead>
+            <tbody *ngFor="let u of Listplannings" style="color: darkblue ; font: 1em sans-serif;;">
+            <tr *ngIf="searchVal == '' || u.day== searchVal">
+            <th scope="row">{{u.idPlanning}}</th>
+            <td>{{u.day}}</td>
+            <td>{{u.description}}</td>
+            <td>{{u.schedule}}</td>
+            
+          <td> <input type="submit" class="btn btn-primary" value="Update  " (click)="editTravelPlanning(u)" style="margin-top: 2%;" >  ...
+           <input type="submit" class="btn btn-danger" value="delete" style="margin-top: 2%;" > </td> 
+         </tr>
+         
+               
+        
+        
+            </tbody>
+        
+        </table> 
+       
+        <div class="">
+           
+            <a href="/travel" class="previous">&laquo; Previous</a>
+<a href="#" class="next">Next &raquo;</a>
+         </div>
+
+
+         <section class="" *ngIf="!show" >
+     
+   
+        </section> 
+
+        <div class="edit-section"  >
+   <app-editplanning  (edited)="editMyTravelPlanning($event)"  *ngIf="show"  [TravelPlanning]="travelPlanning"></app-editplanning>
+
+        </div>
+       
+       
+     
+   
+

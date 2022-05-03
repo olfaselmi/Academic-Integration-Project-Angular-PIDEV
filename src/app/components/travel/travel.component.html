@@ -1,0 +1,60 @@
+   
+   <div class="travel-section ">
+    <!-- <form (submit)="filterById()">
+           <label>
+               Min
+               <input type="string" name="min" id="min" />
+           </label>
+           
+           <button class="btn btn-primary" type="submit">destination</button>
+       </form>-->
+      <div> Search: <input type="text" [(ngModel)]="searchVal"/> </div>
+       <table class="table table-bordered table-striped table-hover" >
+           <thead>
+           <tr>
+           <th>id travel</th>
+           <th>destination</th>
+           <th>date debut</th>
+           <th>date fin</th>
+           <th> Travel Object</th>
+           <th></th>
+           </tr>
+           </thead>
+           <tbody *ngFor="let u of ListTravels; let position=index" >
+           <tr *ngIf="searchVal == '' || u.destination == searchVal || u.objet == searchVal  ">  <!-- ||u.destination.includes(searchVal)-->
+           <th scope="row">{{u.idTravel}}</th>
+           <td>{{u.destination}}</td>
+           <td>{{u.startDate}}</td>
+           <td>{{u.endDate}}</td>
+           <td>{{u.objet}}</td>
+           <td><button (click)="deleteTravel(u.idTravel)" type="button" class="btn btn-danger">DELETE</button> <div class=""></div>
+              <td><button  type="button" class="btn btn-primary" (click)="editTravel(u)"> Edit</button> <div class=""></div>
+               <td><button  type="button" class="btn btn-success" [routerLink]="['/travel/',u.idTravel]" >add planning </button> <div class=""></div>
+       
+           </tr>
+      
+           </tbody>
+           </table> 
+   
+           <section class="lesFournisseur" *ngIf="!show" >
+     
+   
+           </section> 
+   
+           <div class="edit-section"  >
+      <app-edittravel  (edited)="editMyTravel($event)"  *ngIf="show" [Travel]="travel"></app-edittravel>
+   
+           </div>
+          
+   
+        <div>
+           <div scope="col" class="boutonAddtravelPlanning" >  <button class="bouton-addtravel " (click)="showForm()">Add travel</button></div>
+           <app-addtravel (aded)="addTravel($event)" *ngIf="showAdd"></app-addtravel>
+      </div>
+      <div class="boutonAddtravelPlanning"><input type="submit" class="bouton-plannings"  routerLink="/view" value="See Plannings"> </div>
+       </div>
+   
+     
+      
+       
+   
