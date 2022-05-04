@@ -1,1 +1,43 @@
-<p>invitation works!</p>
+<html class="background">
+    <div class="invitation-section" >
+        <table class="table-bordered" style="width: 100%;">
+            <thead>
+            <tr>
+            <th>id Invitation</th>
+            <th>Email</th>
+            <th>State</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let u of Listinvitations">
+            <th scope="row">{{u.idInvi}}</th>
+            <td>{{u.Email}}</td>
+            <td>{{u.State}}</td>
+            
+            <td><button (click)="deleteInvitation(u.idInvi)" type="button" class="btn btn-danger"> <i class="fa fa-trash"></i></button> </td>
+
+                <td> <button  type="button" class="btn btn-primary" (click)="editInvitation(u)"> Edit</button>  </td>
+         </tr>
+         
+        
+            </tbody>
+        
+        </table> 
+
+       
+
+        <div>
+            <div scope="col">  <button class="btn btn-primary " (click)="showForm()">Add invitation</button></div>
+           <app-addinvitation (aded)="addInvitation($event)" *ngIf="showAdd"></app-addinvitation>
+       </div>
+    </div>
+
+    <section class="lesFournisseur" *ngIf="!show" >
+     
+   
+    </section> 
+
+  <div class="edit-section"  >
+    <app-editinvitation  (edited)="editMyInvitation($event)"  *ngIf="show" [Invitation]="invitation"></app-editinvitation>
+    </div>
+</html>

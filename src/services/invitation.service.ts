@@ -15,25 +15,25 @@ export class InvitationService {
   }
 
   constructor(private myHttp : HttpClient) { }
-  getAllOpportunities(): Observable<invitation[]> {
-    return this.myHttp.get<invitation[]>('http://localhost:8089/SpringMVC/opportunity/retrieve-all-opportunities');
+  getAllInvitations(): Observable<invitation[]> {
+    return this.myHttp.get<invitation[]>('http://localhost:8089/SpringMVC/Invitation/get-all-Invitation');
   }
 
-  deleteopportunityById(id:number){
+  deleteinvitationById(id:number){
     return this.myHttp.delete("http://localhost:8089/SpringMVC/Invitation/remove-Invitation/{idInvitation}"+id);
     }
 
-    addOpportunity(opportunity:invitation):Observable<invitation>{
-      return this.myHttp.post<invitation>("http://localhost:8089/SpringMVC/Invitation/addInvitation",opportunity,this.httpOptions);
+    addInvitation(invitation:invitation):Observable<invitation>{
+      return this.myHttp.post<invitation>("http://localhost:8089/SpringMVC/Invitation/addInvitation",invitation,this.httpOptions);
       }
 
-      getOpportunityById(idOpportunity:number):Observable<invitation>{
-        return this.myHttp.get<invitation>("http://localhost:8089/SpringMVC/opportunity/retrieve-opportunity/"+idOpportunity);
+      getInvitationById(idInvi:number):Observable<invitation>{
+        return this.myHttp.get<invitation>("http://localhost:8089/SpringMVC/Invitation/get-invitation-by-user/{idUser}"+idInvi);
         }
   
  
-        updateOpportunity (id: number, opportunity: invitation): Observable<invitation> {
-         return this.myHttp.put<invitation>('http://localhost:8089/SpringMVC/opportunity/modify-oppotunity-byID/'+ id, opportunity,
+        updateInvitation (id: number, opportunity: invitation): Observable<invitation> {
+         return this.myHttp.put<invitation>('http://localhost:8089/SpringMVC/opportunity/modify-oppotunity-byID/'+ id, invitation,
          this.httpOptions);
          }
 

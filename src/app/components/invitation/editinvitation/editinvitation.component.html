@@ -1,0 +1,28 @@
+<div class="section" style="margin-top: 20%;">
+    <h2>update you're invitation</h2>
+    
+        <form class="" [formGroup]="myForm" (ngSubmit)="edit()">
+            <input formControlName="idInvi"  formControlName="idInvi"  readonly>  
+            <div class="form-group">
+             
+                
+                <label>Email</label>
+                <input type="text"   class="form-control" formControlName="description"> 
+        
+                <label> State</label>
+                <input type="date"   class="form-control" formControlName="date"> 
+                
+               
+                
+         
+               
+            </div> 
+          
+           
+           <div> 
+                <input type="submit" class="btn btn-primary" value="Update Travel " style="margin-top: 2%;" >     
+           </div>   
+           
+           <div> <input type="submit" class="btn btn-danger" routerLink="/opportunity" value="annuler" style="margin-top: 2%;">   </div>  
+        </form>
+        </div>
