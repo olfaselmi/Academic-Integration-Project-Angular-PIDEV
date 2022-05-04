@@ -1,4 +1,3 @@
-
 <form  class="form-section" [formGroup]="myForm"  (ngSubmit)="add()">
     <h1>create anew opportunity !</h1>
     <div class="form-group">
@@ -16,8 +15,16 @@
     <div class="form-group">
        
         <select name="typeo" formControlName="typeo" > 
-         <option value="Buy_a_Franchise"> Buy a Franchise</option> 
-         <option value="Selling"> Selling</option>  
+            <option value="Buy_a_Franchise"> Buy a Franchise</option>                  
+            <option value="Selling"> Selling</option> 
+            <option value="event"> event</option>                  
+            <option value="training"> training</option> 
+            <option value="stage"> stage</option>                  
+            <option value="Distributorship"> Distributorship</option> 
+            <option value="Dealership"> Dealership</option>                  
+            <option value="Network_Marketing"> Network_Marketing</option>  
+            <option value="Licensing"> Licensing</option>                  
+            <option value=" Filling_a_Niche">  Filling_a_Niche</option> 
         </select>
       
     </div>
@@ -27,4 +34,3 @@
     
         
 </form>
-

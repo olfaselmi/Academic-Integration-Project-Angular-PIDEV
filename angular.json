@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-proj": {
+    "demo-proj": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-proj",
+            "outputPath": "dist/demo-proj",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +27,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
+              "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.css",
+              "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "node_modules/jszip/dist/jszip.js",
+              "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
+              "node_modules/datatables.net-buttons/js/buttons.colVis.js",
+              "node_modules/datatables.net-buttons/js/buttons.flash.js",
+              "node_modules/datatables.net-buttons/js/buttons.html5.js",
+              "node_modules/datatables.net-buttons/js/buttons.print.js",
+              "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +81,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-proj:build:production"
+              "browserTarget": "demo-proj:build:production"
             },
             "development": {
-              "browserTarget": "angular-proj:build:development"
+              "browserTarget": "demo-proj:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +92,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-proj:build"
+            "browserTarget": "demo-proj:build"
           }
         },
         "test": {
@@ -102,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "angular-proj"
+  "defaultProject": "demo-proj"
 }

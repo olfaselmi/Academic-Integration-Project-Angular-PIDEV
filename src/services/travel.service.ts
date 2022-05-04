@@ -43,4 +43,9 @@ export class TravelService {
         this.httpOptions);
         }
 
+        getStatisticsFromServer(): Observable<Travel[]> {
+     
+          return this.myHttp.get<Travel[]>('http://localhost:8089/SpringMVC/travel/statisticnbTravelUser/');
+        }
+        
 }

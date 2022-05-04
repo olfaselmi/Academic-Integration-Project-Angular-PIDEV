@@ -16,6 +16,7 @@ export class AddopportunityComponent implements OnInit {
   constructor(private opportunityServ:OpportunityService) { }
 
   ngOnInit(): void {
+    
     this.myForm=new FormGroup({
       idOpportunity:new FormControl(),
       description: new FormControl(),

@@ -21,8 +21,9 @@ import { OpportunityComponent } from './components/opportunity/opportunity.compo
 import { AddopportunityComponent } from './components/opportunity/addopportunity/addopportunity.component';
 import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
 import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
+import { StatisticsComponent } from './components/travel/statistics/statistics.component';
+import { DataTablesModule } from 'angular-datatables';
 import { MapsComponent } from './components/maps/maps.component';
-import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:"travel/:id",component:TravelplanningComponent},
   {path:"view",component:VeiwPlanningsComponent},
   {path:"opportunity",component:OpportunityComponent},
+  {path:"statistics",component:StatisticsComponent},
 ];
 
 @NgModule({
@@ -55,8 +57,8 @@ const routes: Routes = [
     AddopportunityComponent,
     EditopportunityComponent,
     EditplanningComponent,
+    StatisticsComponent,
     MapsComponent,
-    UsersComponent,
   
   ],
   imports: [
@@ -64,10 +66,11 @@ const routes: Routes = [
    RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
- 
     FormsModule,
     CommonModule,
+    DataTablesModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

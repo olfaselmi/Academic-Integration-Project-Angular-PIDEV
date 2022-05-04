@@ -29,4 +29,10 @@ export class VeiwPlanningsComponent implements OnInit {
   editMyTravelPlanning(i :any){
 
   }
+
+  deleteTravelPlanning(id:number){
+    this.planningServ.deleteTravelPlanningById(id).subscribe(()=>this.planningServ.getAllTravelsPlanningFromServer()
+      .subscribe(res=>{this.Listplannings =res})
+    );
+  }
 }

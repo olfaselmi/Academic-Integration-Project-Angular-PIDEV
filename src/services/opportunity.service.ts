@@ -28,4 +28,14 @@ export class OpportunityService {
       return this.myHttp.post<Opportunity>("http://localhost:8089/SpringMVC/opportunity/add-opportunity/",opportunity,this.httpOptions);
       }
 
+      getOpportunityById(idOpportunity:number):Observable<Opportunity>{
+        return this.myHttp.get<Opportunity>("http://localhost:8089/SpringMVC/opportunity/retrieve-opportunity/"+idOpportunity);
+        }
+  
+ 
+        updateOpportunity (id: number, opportunity: Opportunity): Observable<Opportunity> {
+         return this.myHttp.put<Opportunity>('http://localhost:8089/SpringMVC/opportunity/modify-oppotunity-byID/'+ id, opportunity,
+         this.httpOptions);
+         }
+
 }

@@ -6,7 +6,7 @@
             <th>id Opportunity</th>
             <th>description</th>
             <th>date</th>
-            <th>typeo</th>
+            <th>type opportunity</th>
             </tr>
             </thead>
             <tbody>
@@ -16,16 +16,30 @@
             <td>{{u.date}}</td>
             <td>{{u.typeo}}</td>
             
-            <td><button (click)="deleteOpportunity(u.idOpportunity)" type="button" class="btn btn-danger"> <i class="fa fa-trash"></i></button> <div class=""></div>
+            <td><button (click)="deleteOpportunity(u.idOpportunity)" type="button" class="btn btn-danger"> <i class="fa fa-trash"></i></button> </td>
+
+                <td> <button  type="button" class="btn btn-primary" (click)="editOpportunity(u)"> Edit</button>  </td>
          </tr>
+         
         
             </tbody>
         
         </table> 
+
+       
+
         <div>
             <div scope="col">  <button class="btn btn-primary " (click)="showForm()">Add opportunity</button></div>
            <app-addopportunity (aded)="addOpportunity($event)" *ngIf="showAdd"></app-addopportunity>
        </div>
     </div>
-</html>
 
+    <section class="lesFournisseur" *ngIf="!show" >
+     
+   
+    </section> 
+
+  <div class="edit-section"  >
+    <app-editopportunity  (edited)="editMyOpportunity($event)"  *ngIf="show" [Opportunity]="opportunity"></app-editopportunity>
+    </div>
+</html>

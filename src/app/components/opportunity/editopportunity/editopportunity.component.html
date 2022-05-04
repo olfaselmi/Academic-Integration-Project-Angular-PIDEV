@@ -1,1 +1,42 @@
-<p>editopportunity works!</p>
+<div class="section" style="margin-top: 20%;">
+    <h2>update you're opprtunity</h2>
+    
+        <form class="" [formGroup]="myForm" (ngSubmit)="edit()">
+            <input formControlName="idOpportunity"  formControlName="idOpportunity"  readonly>  
+            <div class="form-group">
+             
+                
+                <label>Description</label>
+                <input type="text"   class="form-control" formControlName="description"> 
+        
+                <label> Date</label>
+                <input type="date"   class="form-control" formControlName="date"> 
+                
+                <div class="form-group">
+           
+                    <select name="typeo" formControlName="typeo" > 
+                     <option value="Buy_a_Franchise"> Buy a Franchise</option>                  
+                     <option value="Selling"> Selling</option> 
+                     <option value="event"> event</option>                  
+                     <option value="training"> training</option> 
+                     <option value="stage"> stage</option>                  
+                     <option value="Distributorship"> Distributorship</option> 
+                     <option value="Dealership"> Dealership</option>                  
+                     <option value="Network_Marketing"> Network_Marketing</option>  
+                     <option value="Licensing"> Licensing</option>                  
+                     <option value=" Filling_a_Niche">  Filling_a_Niche</option>  
+                    </select>
+                  
+                </div>
+         
+               
+            </div> 
+          
+           
+           <div> 
+                <input type="submit" class="btn btn-primary" value="Update Travel " style="margin-top: 2%;" >     
+           </div>   
+           
+           <div> <input type="submit" class="btn btn-danger" routerLink="/opportunity" value="annuler" style="margin-top: 2%;">   </div>  
+        </form>
+        </div>

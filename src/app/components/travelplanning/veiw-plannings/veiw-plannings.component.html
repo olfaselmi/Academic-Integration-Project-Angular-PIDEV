@@ -18,7 +18,7 @@
             <td>{{u.schedule}}</td>
             
           <td> <input type="submit" class="btn btn-primary" value="Update  " (click)="editTravelPlanning(u)" style="margin-top: 2%;" >  ...
-           <input type="submit" class="btn btn-danger" value="delete" style="margin-top: 2%;" > </td> 
+           <input type="submit" (click)="deleteTravelPlanning(u.idPlanning)" class="btn btn-danger" value="delete" style="margin-top: 2%;" > </td> 
          </tr>
          
                
@@ -30,7 +30,7 @@
        
         <div class="">
            
-            <a href="/travel" class="previous">&laquo; Previous</a>
+            <a routerLink="/travel" class="previous">&laquo; Previous</a>
 <a href="#" class="next">Next &raquo;</a>
          </div>
 
@@ -44,8 +44,3 @@
    <app-editplanning  (edited)="editMyTravelPlanning($event)"  *ngIf="show"  [TravelPlanning]="travelPlanning"></app-editplanning>
 
         </div>
-       
-       
-     
-   
-

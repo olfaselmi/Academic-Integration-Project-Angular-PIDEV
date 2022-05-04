@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
 import { Opportunity } from 'src/app/Model/Opportunity';
 import { OpportunityService } from 'src/services/opportunity.service';
 
@@ -9,13 +10,19 @@ import { OpportunityService } from 'src/services/opportunity.service';
   styleUrls: ['./opportunity.component.css']
 })
 export class OpportunityComponent implements OnInit {
+ // dtOptions: DataTables.Settings = {};
+ // dtTrigger: Subject<any> = new Subject<any>();
+ show:true;
+ opportunity:Opportunity;
 
   Listopportunities:Opportunity[];
   constructor(private ac:ActivatedRoute, private opportunityServ:OpportunityService) { }
 showAdd = false;
   ngOnInit(): void {
 
-    this.opportunityServ.getAllOpportunities().subscribe(res=>{this.Listopportunities=res;});
+    this.opportunityServ.getAllOpportunities().subscribe((res:any)=>{this.Listopportunities=res;
+   //   this.dtTrigger.next(1);
+    });
   }
 
   deleteOpportunity(id:number){
@@ -30,6 +37,17 @@ showAdd = false;
     this.Listopportunities.push(i);
       }
 
+      editOpportunity(x:Opportunity){
+        this.show=true;
+        this.opportunity=x;
+        
+      }
+      
+      editMyOpportunity(i :any){
+    
+      }
+
+     // ngOnDestroy(): void {
+     //   this.dtTrigger.unsubscribe();
+     // }
   }
-
-
