@@ -56,6 +56,7 @@ export class TravelComponent implements OnInit {
 
     /*  ngOnDestroy(): void {
         this.dtTrigger.unsubscribe();
+
         $.fn.dataTable.ext.search.pop();
       } */
      

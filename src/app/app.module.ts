@@ -24,18 +24,11 @@ import { EditplanningComponent } from './components/travelplanning/editplanning/
 import { StatisticsComponent } from './components/travel/statistics/statistics.component';
 import { DataTablesModule } from 'angular-datatables';
 import { MapsComponent } from './components/maps/maps.component';
-import { AddinvitationComponent } from './components/invitation/addinvitation/addinvitation.component';
-import { EditinvitationComponent } from './components/invitation/editinvitation/editinvitation.component';
-import { ProfilComponent } from './components/users/profil/profil.component';
-import { invitationComponent } from './components/invitation/invitation.component';
+
 const routes: Routes = [
   
   {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:'home', component:DashboardComponent},
-  {path:'profil', component:ProfilComponent},
-  {path:'invitation', component:invitationComponent},
-  {path:"editinvitation",component:EditinvitationComponent},
-  {path:"addinvitation",component:AddinvitationComponent},
   {path:'forum', component:ForumComponent},
   {path:'chat',component:ChatComponent},
   {path:"travel",component:TravelComponent},
@@ -57,9 +50,7 @@ const routes: Routes = [
     ChatComponent,
     TravelComponent,
     AddtravelComponent,
-    AddinvitationComponent,
     EdittravelComponent,
-    EditinvitationComponent,
     TravelplanningComponent,
     VeiwPlanningsComponent,
     OpportunityComponent,
@@ -68,8 +59,6 @@ const routes: Routes = [
     EditplanningComponent,
     StatisticsComponent,
     MapsComponent,
-    AddinvitationComponent,
-    EditinvitationComponent,
   
   ],
   imports: [

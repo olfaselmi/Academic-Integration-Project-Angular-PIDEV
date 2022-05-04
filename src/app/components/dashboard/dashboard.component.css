@@ -54,19 +54,19 @@ section:before {
 }
 
 #hero-1:before {
-  background-image: url("https://www.traveldailymedia.com/assets/2019/06/businesstravel-1.jpg");
+  background-image: url("https://www.deplacementspros.com/wp-content/uploads/2020/05/business-travel-1.jpg");
  
   z-index: -1;
 }
 
 #hero-2:before {
-  background-image: url("https://www.forhom.com/sites/default/files/styles/super_large/public/2019-11/p76-77%20Intercalaire_Business-Fotolia_46731316_S_©%20FotolEdhar%20-%20Fotolia.com%20%28Site%20web%29.JPEG?itok=OYomKS7s");
+  background-image: url("https://uncountablestars.com/wp-content/uploads/2021/03/istock_000067177343_small.jpg");
   transform: translateZ(-1px) scale(1);
   z-index: -2;
 }
 
 #hero-3:before {
-  background-image: url("https://liamtra.com/blog/wp-content/uploads/2021/06/The-Role-of-Travel-Agencies.png");
+  background-image: url("https://www.falcon.io/wp-content/uploads/2019/11/Blog-Header-7-Best-Travel-Companies-on-Social-Media-1280x600-1.png");
 	background-attachment: fixed;
 
 }

@@ -1236,19 +1236,19 @@ body[data-layout-size="boxed"] {
   z-index: 1;
   display: block; }
 
-.icon-angular-content {
+.icon-demo-content {
   text-align: center;
   color: #969da5; }
-  .icon-angular-content i {
+  .icon-demo-content i {
     display: block;
     font-size: 24px;
     margin-bottom: 16px;
     color: #8c95a0;
     -webkit-transition: all 0.4s;
     transition: all 0.4s; }
-  .icon-angular-content .col-lg-4 {
+  .icon-demo-content .col-lg-4 {
     margin-top: 24px; }
-    .icon-angular-content .col-lg-4:hover i {
+    .icon-demo-content .col-lg-4:hover i {
       color: #009688;
       -webkit-transform: scale(1.5);
               transform: scale(1.5); }
