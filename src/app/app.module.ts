@@ -22,6 +22,7 @@ import { AddopportunityComponent } from './components/opportunity/addopportunity
 import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
 import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
 import { MapsComponent } from './components/maps/maps.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   
@@ -55,6 +56,7 @@ const routes: Routes = [
     EditopportunityComponent,
     EditplanningComponent,
     MapsComponent,
+    UsersComponent,
   
   ],
   imports: [
