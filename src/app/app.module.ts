@@ -21,6 +21,8 @@ import { OpportunityComponent } from './components/opportunity/opportunity.compo
 import { AddopportunityComponent } from './components/opportunity/addopportunity/addopportunity.component';
 import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
 import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
+import { LikeComponent } from './like/like.component';
+import { CardPostComponent } from './card-post/card-post.component';
 
 const routes: Routes = [
   
@@ -53,6 +55,8 @@ const routes: Routes = [
     AddopportunityComponent,
     EditopportunityComponent,
     EditplanningComponent,
+    LikeComponent,
+    CardPostComponent,
   
   ],
   imports: [
