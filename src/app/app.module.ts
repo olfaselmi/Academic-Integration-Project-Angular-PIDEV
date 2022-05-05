@@ -1,35 +1,29 @@
-import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule, Routes } from "@angular/router";
-import { DataTablesModule } from "angular-datatables";
-import { AppComponent } from "./app.component";
-import { AddEmployeeComponent } from "./components/add-employee/add-employee.component";
-import { ChatComponent } from "./components/chat/chat.component";
-import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { EmployeeComponent } from "./components/employee/employee.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { ForumComponent } from "./components/forum/forum.component";
-import { HeaderComponent } from "./components/header/header.component";
-import { HomeComponent } from "./components/home/home.component";
-import { LoginComponent } from "./components/login/login.component";
-import { LogoutComponent } from "./components/logout/logout.component";
-import { MapsComponent } from "./components/maps/maps.component";
-import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
-import { AddopportunityComponent } from "./components/opportunity/addopportunity/addopportunity.component";
-import { EditopportunityComponent } from "./components/opportunity/editopportunity/editopportunity.component";
-import { OpportunityComponent } from "./components/opportunity/opportunity.component";
-import { SideBarComponent } from "./components/side-bar/side-bar.component";
-import { AddtravelComponent } from "./components/travel/addtravel/addtravel.component";
-import { EdittravelComponent } from "./components/travel/edittravel/edittravel.component";
-import { StatisticsComponent } from "./components/travel/statistics/statistics.component";
-import { TravelComponent } from "./components/travel/travel.component";
-import { EditplanningComponent } from "./components/travelplanning/editplanning/editplanning.component";
-import { TravelplanningComponent } from "./components/travelplanning/travelplanning.component";
-import { VeiwPlanningsComponent } from "./components/travelplanning/veiw-plannings/veiw-plannings.component";
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ForumComponent } from './components/forum/forum.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TravelComponent } from './components/travel/travel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddtravelComponent } from './components/travel/addtravel/addtravel.component';
+import { EdittravelComponent } from './components/travel/edittravel/edittravel.component';
+import { CommonModule } from '@angular/common';
+import { TravelplanningComponent } from './components/travelplanning/travelplanning.component';
+import { VeiwPlanningsComponent } from './components/travelplanning/veiw-plannings/veiw-plannings.component';
+import { OpportunityComponent } from './components/opportunity/opportunity.component';
+import { AddopportunityComponent } from './components/opportunity/addopportunity/addopportunity.component';
+import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
+import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
+import { StatisticsComponent } from './components/travel/statistics/statistics.component';
+import { DataTablesModule } from 'angular-datatables';
+import { MapsComponent } from './components/maps/maps.component';
 
 const routes: Routes = [
   
@@ -47,11 +41,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    EmployeeComponent,
-    AddEmployeeComponent,
-    HeaderComponent,
-    LoginComponent,
-    LogoutComponent,
     AppComponent,
     HomeComponent,
     NavBarComponent,
@@ -74,9 +63,12 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+   RouterModule.forRoot(routes),
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
+    CommonModule,
+    DataTablesModule,
   ],
 
   providers: [],

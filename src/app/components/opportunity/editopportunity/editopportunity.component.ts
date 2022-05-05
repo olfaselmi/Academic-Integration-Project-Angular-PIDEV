@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Opportunity } from 'src/app/Model/Opportunity';
-import { OpportunityService } from 'src/services/opportunity.service';
+import { OpportunityService } from 'src/app/services/opportunity.service';
 
 @Component({
   selector: 'app-editopportunity',

@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { Opportunity } from 'src/app/Model/Opportunity';
-import { OpportunityService } from 'src/services/opportunity.service';
+import { OpportunityService } from 'src/app/services/opportunity.service';
 
 @Component({
   selector: 'app-opportunity',
