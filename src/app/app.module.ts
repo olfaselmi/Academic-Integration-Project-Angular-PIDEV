@@ -6,11 +6,16 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from "@angular/router";
 import { DataTablesModule } from "angular-datatables";
 import { AppComponent } from "./app.component";
+import { AddEmployeeComponent } from "./components/add-employee/add-employee.component";
 import { ChatComponent } from "./components/chat/chat.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { EmployeeComponent } from "./components/employee/employee.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { ForumComponent } from "./components/forum/forum.component";
+import { HeaderComponent } from "./components/header/header.component";
 import { HomeComponent } from "./components/home/home.component";
+import { LoginComponent } from "./components/login/login.component";
+import { LogoutComponent } from "./components/logout/logout.component";
 import { MapsComponent } from "./components/maps/maps.component";
 import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { AddopportunityComponent } from "./components/opportunity/addopportunity/addopportunity.component";
@@ -42,6 +47,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    EmployeeComponent,
+    AddEmployeeComponent,
+    HeaderComponent,
+    LoginComponent,
+    LogoutComponent,
     AppComponent,
     HomeComponent,
     NavBarComponent,
@@ -64,13 +74,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-   RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule,
-    CommonModule,
-    DataTablesModule,
-
   ],
 
   providers: [],
