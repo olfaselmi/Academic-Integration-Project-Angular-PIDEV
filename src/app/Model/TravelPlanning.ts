@@ -1,3 +1,4 @@
+import { User } from "./User";
 
 export class TravelPlanning{
     idPlanning:number;
@@ -5,4 +6,6 @@ export class TravelPlanning{
     description:string;
     day:string;
     idTravel:number;
+    user:User;
+
 }
