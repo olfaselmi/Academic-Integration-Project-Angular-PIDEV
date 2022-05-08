@@ -22,12 +22,21 @@ import { AddopportunityComponent } from './components/opportunity/addopportunity
 import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
 import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
 import { StatisticsComponent } from './components/travel/statistics/statistics.component';
-import { DataTablesModule } from 'angular-datatables';
 import { MapsComponent } from './components/maps/maps.component';
-
+import { AffectemployeeComponent } from './components/travel/affectemployee/affectemployee.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {  CategoryService, ChartModule, DataLabelService, LegendService, LineSeriesService } from '@syncfusion/ej2-angular-charts';
+import { AddComponent } from './components/opportunity/add/add.component';
+import { MatchingComponent } from './components/travel/matching/matching.component';
+import { OpportunitystatisticComponent } from './components/travel/opportunitystatistic/opportunitystatistic.component';
+import { AuthGaurdService } from 'src/services/auth-gaurd.service';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
+  //{path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:'home', component:DashboardComponent},
   {path:'forum', component:ForumComponent},
   {path:'chat',component:ChatComponent},
@@ -37,6 +46,15 @@ const routes: Routes = [
   {path:"view",component:VeiwPlanningsComponent},
   {path:"opportunity",component:OpportunityComponent},
   {path:"statistics",component:StatisticsComponent},
+  {path:"effectemployee",component:AffectemployeeComponent},
+  {path:"matching",component:MatchingComponent},
+  { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
+  { path: 'addemployee', component: AddEmployeeComponent,canActivate:[AuthGaurdService]},
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] },
+
+  
+  
 ];
 
 @NgModule({
@@ -59,7 +77,16 @@ const routes: Routes = [
     EditplanningComponent,
     StatisticsComponent,
     MapsComponent,
-  
+    AffectemployeeComponent,
+    AddComponent,
+    MatchingComponent,
+    OpportunitystatisticComponent,
+    EmployeeComponent,
+    AddEmployeeComponent,
+    LoginComponent,
+    LogoutComponent
+
+    
   ],
   imports: [
     BrowserModule,
@@ -68,7 +95,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    DataTablesModule,
+    NgxChartsModule,
+    ChartModule,
+   
+
   ],
 
   providers: [],

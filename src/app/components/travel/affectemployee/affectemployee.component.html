@@ -1,0 +1,16 @@
+<div class="form-container" >
+    <form  [formGroup]="myForm" (ngSubmit)="affectation()" >
+      <span style="font-weight: bold; font-size: 1.2rem; margin-bottom: 15px; display: block;">affect to travel</span>
+     <div  class="inline-label-container">
+        <label class="inline-label" >Travel's id</label>
+        <input type="text" formControlName="idTravel" name="idTravel" placeholder="idTravel" class="inline-label-input">
+      </div>  
+      <div class="inline-label-container">
+        <label class="inline-label" >Employee's id</label>
+        <input type="text"  formControlName="idUser" name="idUser" placeholder="idUser" class="inline-label-input">
+      </div>
+     
+    
+      <button>Submit</button>
+    </form>
+  </div>

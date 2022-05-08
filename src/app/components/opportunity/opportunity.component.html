@@ -7,18 +7,20 @@
             <th>description</th>
             <th>date</th>
             <th>type opportunity</th>
+          
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let u of Listopportunities">
             <th scope="row">{{u.idOpportunity}}</th>
+            
             <td>{{u.description}}</td>
             <td>{{u.date}}</td>
             <td>{{u.typeo}}</td>
-            
+         
             <td><button (click)="deleteOpportunity(u.idOpportunity)" type="button" class="btn btn-danger"> <i class="fa fa-trash"></i></button> </td>
 
-                <td> <button  type="button" class="btn btn-primary" (click)="editOpportunity(u)"> Edit</button>  </td>
+            <td> <button  type="button" class="btn btn-primary" (click)="editOpportunity(u)"> Edit</button>  </td>
          </tr>
          
         
@@ -43,3 +45,4 @@
     <app-editopportunity  (edited)="editMyOpportunity($event)"  *ngIf="show" [Opportunity]="opportunity"></app-editopportunity>
     </div>
 </html>
+

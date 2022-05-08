@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand navbar-light bg-primary">
+    <div class="nav navbar-nav">
+      <h5 class="nav-item nav-link active text-white">NGX-CHARTS DASHBOARD FOR OPPORTUNITY</h5>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row pt-2">
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title border-bottom">Vertical Bar Charts</h4>
+            <ngx-charts-bar-vertical 
+                [view]="[1000,400]"
+                [results]="Stat"
+                [xAxisLabel]="'Traveler name'"
+                [legendTitle]="'Opportunity Chart'"
+                [yAxisLabel]="'number of opportunities'"
+                [legend]="true"
+                [showXAxisLabel]="true"
+                [showYAxisLabel]="true"
+                [xAxis]="true"
+                [yAxis]="true"
+                [gradient]="true">
+            </ngx-charts-bar-vertical>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title border-bottom">Advanced Pie Charts</h4>
+            <ngx-charts-advanced-pie-chart 
+                  [results]="Stat"
+                  [gradient]="true" >
+            </ngx-charts-advanced-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title border-bottom">Pie Grid Charts</h4>
+            <ngx-charts-pie-grid 
+              [results]="Stat" >
+            </ngx-charts-pie-grid>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>

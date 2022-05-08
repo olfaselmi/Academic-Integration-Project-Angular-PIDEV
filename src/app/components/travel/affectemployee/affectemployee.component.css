@@ -1,0 +1,77 @@
+
+  
+  .form-container {
+    background: rgb(13 12 156 / 92%);
+    height: 291px;
+    width: 394px;
+    margin: 46px auto;
+   margin-top: 15%;
+    padding: 25px 10px;
+    border-radius: 6px;
+    box-shadow: 27px 3px 20px 3px #000;
+  }
+  
+  .inline-label {
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    left: 66px;
+    top: 1px;
+    display: none;
+  }
+  
+  
+  
+  .inline-label-input {
+    height: 30px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding-left: 2px;
+    background-color: whitesmoke;
+  }
+  
+  .show-label .inline-label-input {
+    line-height: 45px;
+  }
+  
+  .show-label label {
+    display: block;
+  }
+  
+  .inline-label-container {
+    position: relative;
+    margin: 5px auto;
+    text-align: center;
+  }
+  
+  form button {
+    margin-top: 20px;
+    border: 1px solid #7d99ca;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: #a5b8da;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
+    background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+    background-image: linear-gradient(to bottom, #a5b8da, #7089b3);
+    filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#a5b8da, endColorstr=#7089b3);
+  }
+  
+  form button:hover {
+    border: 1px solid #5d7fbc;
+    cursor: pointer;
+    background-color: #819bcb;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
+    background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
+    background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
+    background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
+    background-image: -o-linear-gradient(top, #819bcb, #536f9d);
+    background-image: linear-gradient(to bottom, #819bcb, #536f9d);
+    filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#819bcb, endColorstr=#536f9d);
+  }

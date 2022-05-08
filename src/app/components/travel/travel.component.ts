@@ -10,6 +10,8 @@ import { TravelService } from 'src/services/travel.service';
 })
 export class TravelComponent implements OnInit {
   show:true;
+  showaffectation:true;
+
 
   ListTravels:Travel[];
   travel:Travel;
@@ -44,7 +46,8 @@ export class TravelComponent implements OnInit {
   editMyTravel(i :any){
 
   }
-  
+
+
 
   showForm(){
     this.showAdd=true;
@@ -54,11 +57,7 @@ export class TravelComponent implements OnInit {
       }
 
 
-    /*  ngOnDestroy(): void {
-        this.dtTrigger.unsubscribe();
-
-        $.fn.dataTable.ext.search.pop();
-      } */
+   
      
 
 

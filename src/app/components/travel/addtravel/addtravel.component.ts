@@ -30,7 +30,7 @@ export class AddtravelComponent implements OnInit  {
     this.travelServ.addTravel(this.myForm.value).subscribe();
   this.aded.emit(this.myForm.value);
   this.myForm.reset();
-  window.location.reload();
+  //window.location.reload();
   }
 
 
