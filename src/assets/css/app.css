@@ -15,6 +15,7 @@ File: Main Css File
   background-color: #ffffff; }
 
 .navbar-header {
+  background: #926dde;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +31,8 @@ File: Main Css File
   -webkit-box-shadow: 1px 0 5px rgba(0, 0, 0, 0.03);
           box-shadow: 1px 0 5px rgba(0, 0, 0, 0.03); }
   .navbar-header .dropdown .show.header-item {
-    background-color: #f6f6f6; }
+  
+    background-color: #26064d; }
 
 body[data-topbar="dark"] .dropdown .show.header-item {
   background-color: rgba(255, 255, 255, 0.05); }

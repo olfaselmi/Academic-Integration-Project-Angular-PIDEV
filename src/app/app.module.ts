@@ -48,10 +48,12 @@ const routes: Routes = [
   {path:"statistics",component:StatisticsComponent},
   {path:"effectemployee",component:AffectemployeeComponent},
   {path:"matching",component:MatchingComponent},
-  { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
+//  { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
   { path: 'addemployee', component: AddEmployeeComponent,canActivate:[AuthGaurdService]},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] },
+  { path: 'users', loadChildren: () => import('./components/users/users.module').then(m => m.UsersModule) },
+
 
   
   

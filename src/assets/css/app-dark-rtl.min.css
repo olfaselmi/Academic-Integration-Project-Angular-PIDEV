@@ -15,6 +15,7 @@ File: Main Css File
   background-color: #293344; }
 
 .navbar-header {
+  background: #926dde;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,17 +1,26 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SessionService } from './session.service';
+
 
 @Injectable({
-  providedIn: 'root'
-})
-export class ImageService {
+  providedIn: 'root'})
+export class imageService {
 
-  readonly BaseURI = 'http://localhost:8089/SpringMVC/get/image/info/';
+  constructor(private httpClient : HttpClient, private session:SessionService) { }
 
-  constructor(private http: HttpClient) { }
+  postFileRec(file: FormData):Observable<any> {
+    const endpoint = 'http://localhost:8081/SpringMVC/reclamation/uploadImage';
+    return this.httpClient.post(endpoint, file);
+  }
 
-  getImage(image){
-    
-    return this.http.get(this.BaseURI+ image );
+  postFileProd(file: FormData):Observable<any> {
+    const endpoint = 'http://localhost:8081/SpringMVC/product/uploadImage';
+    return this.httpClient.post(endpoint, file);
+  }
+  postFileUser(file: FormData,id : Number):Observable<any> {
+    const endpoint = 'http://localhost:8081/SpringMVC/user/uploadImage/'+id;
+    return this.httpClient.post(endpoint, file,{headers: new HttpHeaders().set('authorisation', this.session.getUser().token)});
   }
 }
