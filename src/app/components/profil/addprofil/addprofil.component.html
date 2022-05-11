@@ -1,0 +1,35 @@
+
+
+<form  class="form-section" [formGroup]="myForm"  (ngSubmit)="add()">
+    <h1>create a new Profil !</h1>
+    <div class="form-group">
+        <label>Profil Metric</label>
+        <input type="text"  class="form-control" name="Metric"  formControlName="Metric"> 
+    </div>
+   
+    <div class="form-group">
+    <label>Profession </label>
+    <input type="text" class="form-control" formControlName="Profession ">
+    </div> 
+
+    <div class="form-group">
+        <label>Domain</label>
+        <input type="text"  class="form-control"  formControlName="Domain">
+        </div> 
+
+
+    <div class="form-group">
+        <label>profil FollowersNbr</label>
+        <input type="number"  class="form-control" name="FollowersNbr"  formControlName="FollowersNbr"> 
+    </div>
+    
+  <div class="boutonAddProfil"><input type="submit" class="btn btn-primary" value="Submit"> </div>
+  
+ <!--mouch feragh-->
+        
+</form>
+
+
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,79 @@
+<form class="form-section" [formGroup]="myForm" (ngSubmit)="add()">
+    <h1>create a new travel !</h1>
+    <div class="form-group">
+        <label>IdTrip</label>
+        <input type="number" class="form-control" name="idTrip" formControlName="idTrip">
+        <span class="text-danger" *ngIf="myForm.get('idTrip')?.invalid && myForm.get('idTrip')?.touched  ">idTrip
+            is required</span>
+    </div>
+
+
+
+    
+
+    <div class="form-group">
+        <label>DateBegin</label>
+        <input type="date" class="form-control" formControlName="dateBegin">
+        
+    </div>
+    <div class="form-group">
+        <label>DateEnd</label>
+        <input type="date" class="form-control" formControlName="dateEnd">
+    </div>
+
+    <span class="text-danger"
+    *ngIf="myForm.hasError('loaddate')">Wrong format</span>
+    
+
+
+    <div class="form-group">
+        <label>Duration</label>
+        <input type="text" class="form-control" name="duration" formControlName="duration">
+        <span class="text-danger" *ngIf="myForm.get('duration')?.invalid && myForm.get('duration')?.touched  ">duration
+            is required</span>
+    </div>
+
+    <div class="form-group">
+        <label>Domain</label>
+        <input type="text" class="form-control" name="domain" formControlName="domain">
+        <span class="text-danger" *ngIf="myForm.get('domain')?.invalid && myForm.get('domain')?.touched  ">Domain
+            is required</span>
+    </div>
+
+    <div class="form-group">
+        <label>Destination</label>
+        <input type="text" class="form-control" name="destination" formControlName="destination">
+        <span class="text-danger"
+            *ngIf="myForm.get('destination')?.invalid && myForm.get('destination')?.touched  ">Destination
+            is required</span>
+    </div>
+
+    <div class="form-group">
+        <label>CodeMatche</label>
+        <input type="number" class="form-control" name="codeMatche" formControlName="codeMatche">
+        <span class="text-danger"
+            *ngIf="myForm.get('codeMatche')?.invalid && myForm.get('codeMatche')?.touched  ">codeMatche
+            is required</span>
+    </div>
+
+    <div class="form-group">
+        <label>User Id</label>
+        <input type="number" class="form-control" name="userId" formControlName="userId">
+        <span class="text-danger" *ngIf="myForm.get('userId')?.invalid && myForm.get('userId')?.touched  ">userId
+            is required</span>
+    </div>
+
+
+    <div class="boutonAddtrip"><button *ngIf="myForm.valid" type="submit" class="btn btn-primary" value="Submit"
+            onclick="alert('Hello\ the trip has been created successfully')"> Submit</button> </div>
+
+
+
+    <!--mouch feragh-->
+
+
+</form>
+
+
+
+<router-outlet></router-outlet>

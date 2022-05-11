@@ -1,0 +1,29 @@
+
+
+<form  class="form-section" [formGroup]="myForm"  (ngSubmit)="add()">
+    <h1>create a new quiz !</h1>
+    <div class="form-group">
+        <label>IdQuiz </label>
+        <input type="number"  class="form-control" name="IdQuiz "  formControlName="idquiz">   
+        
+    </div>
+   
+    <div class="form-group">
+    <label>codeReponse </label>
+    <input type="number" class="form-control" formControlName="codeReponse ">
+    </div> 
+
+   
+    
+  <div class="boutonAddQuiz"><input type="submit" class="btn btn-primary" value="Submit"> </div>
+  
+ <!--mouch feragh-->
+        
+</form>
+
+
+
+<router-outlet></router-outlet>
+
+
+

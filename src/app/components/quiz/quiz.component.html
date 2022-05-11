@@ -1,0 +1,43 @@
+   
+   <div class="Quiz-section ">
+
+      
+    
+      <div> Search: <input type="text" [(ngModel)]="searchVal"/> </div>
+       <table class="table table-bordered table-striped table-hover" >
+           <thead>
+           <tr>
+           
+           <th>IdQuiz</th>
+           <th>codeReponse</th>
+
+
+
+           <tbody *ngFor="let u of listQuiz; let position=index" >
+            <tr *ngIf="searchVal == '' || u.IdQuiz == searchVal || u.codeReponse == searchVal  "> 
+            <th scope="row">{{u.IdQuiz}}</th>
+            
+            <td>{{u.codeReponse}}</td>
+            <td>{{u.IdQuiz}}</td>
+            
+            <td><button (click)="deletequiz(u.IdQuiz)" type="button" class="btn btn-danger">DELETE</button> <div class=""> </div>
+            </tbody>
+
+           
+           <th></th>
+           
+           </tr>
+           </thead>
+           
+
+
+          
+          
+          
+           </table> 
+   
+   
+     
+      
+       
+   

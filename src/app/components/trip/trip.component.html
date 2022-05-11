@@ -1,0 +1,68 @@
+<div class="trip-section ">
+
+    <!-- <form (submit)="addTrip(trip)">
+        <label>
+            Min
+            <input type="string" Idtrip="min" idu="min" />
+        </label>
+
+        <button class="btn btn-primary" type="submit">submit</button>
+    </form>   -->
+
+    <div> Search: <input type="number" [(ngModel)]="searchVal" />
+        <button (click)="findById(searchVal)">Search</button>
+    </div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>IdTrip</th>
+
+                <th>Domain</th>
+                <th>Destination</th>
+                <th>Duration</th>
+                <th>DateBegin</th>
+                <th>dateEnd</th>
+                <th>CodeMatche</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let u of result; let position=index">
+            <tr>
+
+                <!-- <th scope="row">{{u.idTrip}}</th> -->
+                <td>{{u.idTrip}}</td>
+
+                <td>{{u.domain}}</td>
+                <td>{{u.destination}}</td>
+                <td>{{u.duration}}</td>
+                <td>{{u.dateBegin | date :'shortDate'}}</td>
+                <td>{{u.dateEnd | date :'shortDate'}}</td>
+                <td>{{u.codeMatche}}</td>
+
+
+
+                <td><button type="button" class="btn btn-success" (click)="deleteTrip(searchVal,u.idTrip)">delete
+                    </button>
+
+
+
+
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+    <div>
+
+        <div scope="col" class="boutonAddtrip"> <button class="bouton-addtrip " (click)="showForm()">Add trip</button>
+        </div>
+        <app-addtrip (aded)="addTrip($event)" *ngIf="showAdd"></app-addtrip>
+    </div>
+
+
+
+</div>

@@ -21,20 +21,43 @@ import { OpportunityComponent } from './components/opportunity/opportunity.compo
 import { AddopportunityComponent } from './components/opportunity/addopportunity/addopportunity.component';
 import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
 import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
-import { LikeComponent } from './like/like.component';
-import { CardPostComponent } from './card-post/card-post.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { AddprofilComponent } from './components/profil/addprofil/addprofil.component';
+import { EditprofilComponent } from './components/profil/editprofil/editprofil.component';
+import { AddquizComponent } from './components/quiz/addquiz/addquiz.component';
+import { TripComponent } from './components/trip/trip.component';
+import { AddtripComponent } from './components/trip/addtrip/addtrip.component';
+import { MatchingComponent } from './components/matching/matching.component';
+
+//primeng
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+
+
+
+
+
+
+
 
 const routes: Routes = [
-  
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path:'home', component:DashboardComponent},
-  {path:'forum', component:ForumComponent},
-  {path:'chat',component:ChatComponent},
-  {path:"travel",component:TravelComponent},
-  {path:"edit",component:EdittravelComponent},
-  {path:"travel/:id",component:TravelplanningComponent},
-  {path:"view",component:VeiwPlanningsComponent},
-  {path:"opportunity",component:OpportunityComponent},
+
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: DashboardComponent },
+  { path: 'forum', component: ForumComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: "travel", component: TravelComponent },
+  { path: "edit", component: EdittravelComponent },
+  { path: "travel/:id", component: TravelplanningComponent },
+  { path: "view", component: VeiwPlanningsComponent },
+  { path: "opportunity", component: OpportunityComponent },
+  { path: "Quiz", component: QuizComponent },
+  { path: "Profil", component: ProfilComponent },
+  { path: "trip", component: TripComponent },
+  { path: "matching", component: MatchingComponent }
 ];
 
 @NgModule({
@@ -55,18 +78,27 @@ const routes: Routes = [
     AddopportunityComponent,
     EditopportunityComponent,
     EditplanningComponent,
-    LikeComponent,
-    CardPostComponent,
-  
+    QuizComponent,
+    ProfilComponent,
+    AddprofilComponent,
+    EditprofilComponent,
+    AddquizComponent,
+    TripComponent,
+    AddtripComponent,
+    MatchingComponent,
+
+
   ],
   imports: [
     BrowserModule,
-   RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
- 
+    TableModule, ButtonModule,
+    InputTextModule,
     FormsModule,
     CommonModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

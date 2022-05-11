@@ -1,0 +1,35 @@
+<div class="Profil-section ">
+   
+    <div> Search: <input type="text" [(ngModel)]="searchVal"/> </div>
+     <table class="table table-bordered table-striped table-hover" >
+         <thead>
+         <tr>
+            <th>pwd</th>
+         <th>Metric</th>
+         <th>Profession</th>
+         <th>Domain</th>
+         <th> FollowersNbr</th>
+         <th></th>
+         </tr>
+         </thead>
+         <tbody *ngFor="let u of ListProfils; let position=index" >
+         <tr *ngIf="searchVal == '' || u.metric == searchVal || u.Profession == searchVal  ">  <!-- ||u.Metric.includes(searchVal)-->
+         <th scope="row">{{u.IdProfil}}</th>
+         <td>{{u.pwd}}</td>
+         <td>{{u.metric}}</td>
+         <td>{{u.Profession}}</td>
+         <td>{{u.domain}}</td>
+         <td>{{u.followersNbr}}</td>
+         <td><button (click)="deleteprofil(u.IdProfil)" type="button" class="btn btn-danger">DELETE</button> <div class=""></div>
+          <td><button  type="button" class="btn btn-primary" (click)="editprofil(u)"> Edit</button> <div class=""></div>
+         </tr>
+         
+      <div>
+          <div scope="col" class="boutonAddProfil" >  <button class="bouton-addprofil " (click)="showForm()">Add Profil</button></div>
+          <app-addprofil (aded)="addprofil($event)" *ngIf="showAdd"></app-addprofil>
+     </div>
+    
+         </tbody>
+         </table> 
+ 
+ 
