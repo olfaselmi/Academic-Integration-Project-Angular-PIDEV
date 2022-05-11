@@ -3,7 +3,7 @@ import { User } from './User';
 
 export class Comment {
   IdCom: number;
-  Contents: string;
+  contents: string;
   post: Post;
   user: User;
 }

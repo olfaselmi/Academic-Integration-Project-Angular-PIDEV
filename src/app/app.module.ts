@@ -23,18 +23,21 @@ import { EditopportunityComponent } from './components/opportunity/editopportuni
 import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
 import { LikeComponent } from './like/like.component';
 import { CardPostComponent } from './card-post/card-post.component';
-
+import { MyPostsComponent } from './my-posts/my-posts.component';
+import { MyPostCardComponent } from './my-post-card/my-post-card.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
-  
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path:'home', component:DashboardComponent},
-  {path:'forum', component:ForumComponent},
-  {path:'chat',component:ChatComponent},
-  {path:"travel",component:TravelComponent},
-  {path:"edit",component:EdittravelComponent},
-  {path:"travel/:id",component:TravelplanningComponent},
-  {path:"view",component:VeiwPlanningsComponent},
-  {path:"opportunity",component:OpportunityComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: DashboardComponent },
+  { path: 'forum', component: ForumComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: 'travel', component: TravelComponent },
+  { path: 'edit', component: EdittravelComponent },
+  { path: 'travel/:id', component: TravelplanningComponent },
+  { path: 'view', component: VeiwPlanningsComponent },
+  { path: 'opportunity', component: OpportunityComponent },
+  { path: 'myPosts', component: MyPostsComponent },
 ];
 
 @NgModule({
@@ -57,18 +60,20 @@ const routes: Routes = [
     EditplanningComponent,
     LikeComponent,
     CardPostComponent,
-  
+    MyPostsComponent,
+    MyPostCardComponent,
   ],
   imports: [
     BrowserModule,
-   RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
- 
+    ToastrModule.forRoot(),
     FormsModule,
     CommonModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

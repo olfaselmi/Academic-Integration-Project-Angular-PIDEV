@@ -12,13 +12,14 @@ export class PostServiceService {
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.uri);
   }
-  addPost(body: Post): Observable<Post[]> {
-    return this.http.post<Post[]>(this.uri, body);
+  addPost(id: number, body: String): Observable<Post[]> {
+    return this.http.post<Post[]>(`${this.uri}/${id}`, { contents: body });
   }
-  updatePost(body: Post): Observable<Post[]> {
-    return this.http.put<Post[]>(this.uri, body);
+  updatePost(post: Post): Observable<Post[]> {
+    return this.http.put<Post[]>(this.uri, post);
   }
-  deletePost(id: number): void {
-    this.http.delete(`${this.uri}/${id}`);
+  deletePost(id: number): Observable<any> {
+    console.log(this.uri);
+    return this.http.delete(`${this.uri}/${id}`);
   }
 }

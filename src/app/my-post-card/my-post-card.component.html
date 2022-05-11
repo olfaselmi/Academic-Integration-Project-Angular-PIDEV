@@ -1,0 +1,68 @@
+<div class="card" *ngIf="show">
+  <div class="card-body">
+    <div class="d-flex flex-start align-items-center">
+      <img
+        class="rounded-circle shadow-1-strong me-3"
+        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
+        alt="avatar"
+        width="60"
+        height="60"
+      />
+      <div>
+        <div class="d-flex justify-content-between" style="width: 100%">
+          <div>
+            <input
+              type="checkbox"
+              name="edit"
+              checked
+              data-toggle="toggle"
+              (change)="editPost()"
+            /><label for="edit">edit</label>
+          </div>
+          <button
+            class="btn btn-success btn-sm rounded-0"
+            type="button"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Edit"
+            (click)="update()"
+          >
+            <i class="fa fa-edit"></i> Edit
+          </button>
+          <button
+            class="btn btn-danger btn-sm rounded-0"
+            type="button"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Delete"
+            (click)="delete()"
+          >
+            <i class="fa fa-trash"></i>Delete
+          </button>
+        </div>
+
+        <h6 class="fw-bold text-primary mb-1">
+          {{ post.user.firstName + " " + post.user.lastName }}
+        </h6>
+        <p class="text-muted small mb-0">
+          Shared publicly - {{ post.date | date: "dd/MM/yyy" }}
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-3 mb-4 pb-2">
+      <textarea
+        [readonly]="edit"
+        name="contents"
+        class="form-control"
+        id="textAreaExample"
+        rows="4"
+        style="background: #fff"
+        [value]="post.contents"
+        [(ngModel)]="contents"
+        #p="ngModel"
+      ></textarea>
+    </p>
+    <app-like [id]="post.idPost"></app-like>
+  </div>
+</div>

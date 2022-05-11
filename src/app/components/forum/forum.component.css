@@ -1,3 +1,4 @@
+@import "~ngx-toastr/toastr";
 p {
   margin: -5px;
 }
