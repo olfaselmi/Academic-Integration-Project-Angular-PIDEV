@@ -21,6 +21,7 @@
     "@angular/router": "~13.3.0",
     "@swimlane/ngx-charts": "^20.1.0",
     "@syncfusion/ej2-angular-charts": "^20.1.51",
+    "angular-animations": "^0.11.0",
     "angular-datatables": "^13.0.1",
     "datatables.net": "^1.11.3",
     "datatables.net-bs5": "^1.11.3",
@@ -29,6 +30,8 @@
     "datatables.net-dt": "^1.11.3",
     "jquery": "^3.6.0",
     "jszip": "^3.9.1",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

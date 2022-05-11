@@ -54,20 +54,25 @@ export class InscriptionComponent implements OnInit {
     this.user.badge = "Ordinaire";
     this.user.promoActive = false;
     let resp = this.us.checkUser(f.value.email);
-    resp.subscribe((data) => 
-    {
-      if (data == true) 
-      {
-        this.error2 = true;
-      }else 
-      {
-        let response = this.us.sendMail(f.value.email)
-        response.subscribe((data) => {
-          this.codeI = data
-        })
-        this.registerForm = false;
-      }
-    })
+    console.log('this is the user ', this.user)
+    this.us.doRegistration(this.user).subscribe((res)=> {console.log(res)
+    this.route.navigateByUrl('/login')
+    } , err => console.log(err))
+    
+    // resp.subscribe((data) => 
+    // {
+    //   if (data == true) 
+    //   {
+    //     this.error2 = true;
+    //   }else 
+    //   {
+    //     let response = this.us.sendMail(f.value.email)
+    //     response.subscribe((data) => {
+    //       this.codeI = data
+    //     })
+    //     this.registerForm = false;
+    //   }
+    // })
 
   }
   confirmerCode() {

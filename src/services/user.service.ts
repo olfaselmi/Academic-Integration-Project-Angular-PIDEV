@@ -13,15 +13,15 @@ export class UserService {
     
   }
   
-  public doRegistration(user: User){
-    return this.http.post("http://localhost:8081/SpringMVC/user/add-user",user,{responseType:'text' as 'json'});
+  public doRegistration(user: any){
+    return this.http.post("http://localhost:8089/SpringMVC/user/add-user",user);
   }
   public doConnection(email:string,psw:string): Observable<User>{
-    return this.http.get<User>("http://localhost:8081/SpringMVC/user/connection/"+email+"/"+psw);
+    return this.http.get<User>("http://localhost:8089/SpringMVC/user/connection/"+email+"/"+psw);
   }
   
   public checkPsw(id:number,psw:string): Observable<Boolean>{
-    return this.http.get<Boolean>("http://localhost:8081/SpringMVC/user/check-password/"+id+"/"+psw);
+    return this.http.get<Boolean>("http://localhost:8089/SpringMVC/user/check-password/"+id+"/"+psw);
   }
 
   public updateUser(user: User){

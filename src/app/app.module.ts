@@ -34,6 +34,13 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { LoginComponent } from './components/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {PasswordModule} from 'primeng/password';
+import {InputTextModule} from 'primeng/inputtext';
+
+
+
 const routes: Routes = [
   
   //{path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -91,7 +98,7 @@ const routes: Routes = [
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,BrowserAnimationsModule,
    RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
@@ -99,6 +106,8 @@ const routes: Routes = [
     CommonModule,
     NgxChartsModule,
     ChartModule,
+    PasswordModule,
+    InputTextModule
    
 
   ],

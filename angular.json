@@ -30,7 +30,10 @@
               "src/styles.css",
               "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
               "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.css",
-              "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css"
+              "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
