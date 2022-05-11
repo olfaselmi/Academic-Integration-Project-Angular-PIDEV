@@ -12,6 +12,9 @@ export class PostServiceService {
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.uri);
   }
+  getMyPosts(id: number): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.uri}/my/${id}`);
+  }
   addPost(id: number, body: String): Observable<Post[]> {
     return this.http.post<Post[]>(`${this.uri}/${id}`, { contents: body });
   }

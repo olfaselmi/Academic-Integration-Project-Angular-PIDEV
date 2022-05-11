@@ -1,45 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>AngularProj</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- App favicon -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="shortcut icon" href="./assets/images/favicon.ico">
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularProj</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- App favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" />
 
-   <!-- Bootstrap Css -->
-   <link href="./assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Css -->
+    <link
+      href="./assets/css/bootstrap.min.css"
+      id="bootstrap-style"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-   <!-- Icons Css -->
-   <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-   <!-- App Css-->
-   <link href="./assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body data-sidebar="dark">
-
-  
+    <!-- Icons Css -->
+    <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link
+      href="./assets/css/app.min.css"
+      id="app-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body data-sidebar="dark">
     <app-root></app-root>
- 
-   
-    
-  <!-- JAVASCRIPT -->
-<script src="./assets/libs/jquery/jquery.min.js"></script>
-<script src="./assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/libs/metismenu/metisMenu.min.js"></script>
-<script src="./assets/libs/simplebar/simplebar.min.js"></script>
-<script src="./assets/libs/node-waves/waves.min.js"></script>
 
-<!--Morris Chart-->
-<script src="./assets/libs/morris.js/morris.min.js"></script>
-<script src="./assets/libs/raphael/raphael.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="./assets/libs/jquery/jquery.min.js"></script>
+    <script src="./assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="./assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="./assets/libs/node-waves/waves.min.js"></script>
 
-<script src="./assets/js/pages/dashboard.init.js"></script>
+    <!--Morris Chart-->
+    <script src="./assets/libs/morris.js/morris.min.js"></script>
+    <script src="./assets/libs/raphael/raphael.min.js"></script>
 
-<script src="./assets/js/app.js"></script>
+    <script src="./assets/js/pages/dashboard.init.js"></script>
 
-
-</body>
+    <script src="./assets/js/app.js"></script>
+    <script type="text/javascript">
+      (function (d, m) {
+        var kommunicateSettings = {
+          appId: "16bf4f1abb0990849d3d3f2bf71bd8f6b",
+          popupWidget: true,
+          automaticChatOpenOnNavigation: true,
+        };
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0];
+        h.appendChild(s);
+        window.kommunicate = m;
+        m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+      /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
+  </body>
 </html>

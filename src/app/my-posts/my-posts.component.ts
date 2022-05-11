@@ -17,7 +17,7 @@ export class MyPostsComponent implements OnInit {
   list: Post[];
   com: Boolean;
   ngOnInit(): void {
-    this.service.getPosts().subscribe((res) => {
+    this.service.getMyPosts(1).subscribe((res) => {
       this.list = res;
     });
     this.com = false;
