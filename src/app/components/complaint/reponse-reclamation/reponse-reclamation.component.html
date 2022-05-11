@@ -1,0 +1,39 @@
+<div class="container align-items-center" style="margin-top: 5%" >
+  <h1 class="text-center mb-5">Complaint Response Area</h1>
+
+
+  <div class="card mt-3" >
+    <div class="card-header">
+
+
+
+      <h4 class="d-inline">{{responseReclam.complainedAbout.firstName}}&nbsp;{{responseReclam.complainedAbout.lastName}}</h4>
+      <h6 class="d-block ml-5" >{{responseReclam.dateComplaint | date:'shortDate'}}</h6>
+
+
+
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{responseReclam.topic}}</h5>
+
+      <p class="card-text">{{responseReclam.messageComplaint}}</p>
+
+      <button  [disabled]="responseReclam.cloture" (click)="showFormAdd()" class="btn btn-primary mt-4"  >Reply</button>
+      <app-form-reponsereclamation  [rec]="rec" *ngIf="showFormTemplateAdd" (addEvent)="saveRepRec($event)" ></app-form-reponsereclamation>
+      <div class="card mt-3" *ngFor="let l of listrep" >
+
+
+        <div class="card-body">
+          <div class="container align-items-center ">
+            <p class="card-text">{{l.reponse}}</p>
+            <img  *ngIf="l.imageReponseReclamation!=''"class="imageRec d-block" style="border: solid 1px "  src="{{l.imageReponseReclamation}}"/>
+          </div>
+
+        </div>
+        <app-form-reponsereclamation  *ngIf="showFormTemplateUpdate && showFormTemplateId==l.idReponseReclamation"  (addEvent)="saveRepRec($event)" [updateRepRec]="inputRepReclamation"></app-form-reponsereclamation>
+
+      </div>
+    </div>
+
+  </div>
+</div>

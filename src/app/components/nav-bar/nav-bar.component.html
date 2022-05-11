@@ -3,9 +3,9 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-         
+
                 <a href="index.html" class="logo logo-light">
-                   
+
                     <span class="logo-lg">
                         <img src="https://scontent.ftun16-1.fna.fbcdn.net/v/t39.30808-6/279566996_145980621280594_548108692547064443_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=W2Ju6QX2Q8oAX--Pp-J&_nc_ht=scontent.ftun16-1.fna&oh=00_AT9uUwqyoP4lD6yoxNHXq8fpaJwp5y30WnGBAWwN3pD9_Q&oe=62757740" alt="" height="80">
                     </span>
@@ -23,7 +23,23 @@
         </div>
 
         <!-- Search input -->
-       
+      <!-- Search input -->
+      <div class="dropdown d-inline-block ms-2 ">
+        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+          <span>Statistics</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end">
+          <!-- item-->
+          <a class="dropdown-item" routerLink="/statistics"><i style="font-size:24px" class="fa font-size-16 align-middle me-2">&#xf080;</i>
+            charts</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://www.javatpoint.com/classification-and-predication-in-data-mining"><i class="fa fa-eye font-size-16 align-middle me-2"></i>
+            predict</a>
+        </div>
+      </div>
 
         <div class="d-flex">
 
@@ -101,25 +117,8 @@
                 </div>
             </div>
 
-            <div class="dropdown d-inline-block ms-2 ">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
-                        alt="Header Avatar">
-                    <span class="m-3 ">User Name</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="dripicons-user font-size-16 align-middle me-2"></i>
-                        Profile</a>
-                   
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                        Logout</a>
-                </div>
-            </div>
 
-           
+
 
         </div>
     </div>

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand navbar-light bg-primary">
+    <div class="nav navbar-nav">
+      <h5 class="nav-item nav-link active text-white">DASHBOARD FOR STATISTICS </h5>
+    </div>
+  </nav>
+  <div class="container-fluid">
+
+    <google-chart class="w-100 h-100" #chart
+                  [title]="title"
+                  [type]="type"
+                  [data]="dataRec"
+                  [columns]="columnNames"
+                  [options]="options"
+    >
+    </google-chart>
+  </div>

@@ -1,0 +1,52 @@
+<form  class="form-section" [formGroup]="myForm"  (ngSubmit)="add()">
+    <h1>Les't create a new complaint !</h1>
+  <div class="form-group">
+    <label>the id</label>
+    <input type="text"  class="form-control" name="idComplaint"  formControlName="idComplaint" >
+  </div>
+
+
+
+  <div class="form-group">
+
+    <div class="form-group">
+      <label>the topic</label>
+      <select name="topic" formControlName="topic" >
+        <option value="Service"> Service</option>
+        <option value="Security"> Security</option>
+        <option value="Quality"> Quality</option>
+
+      </select>
+
+    </div>
+
+
+
+
+
+        <label>the complaint description</label>
+        <input type="text"  class="form-control" name="messageComplaint"  formControlName="messageComplaint" >
+    </div>
+  <div class="form-group">
+    <label>the date</label>
+    <input type="date" class="form-control" formControlName="dateComplaint">
+    </div>
+  <div class="form-group">
+    <label>the state</label>
+    <input type="text"  class="form-control" name="cloture"  formControlName="cloture" >
+  </div>
+  <div class="form-group">
+    <label>the complainedAbout</label>
+    <input type="text"  class="form-control" name="id_complained"  formControlName="id_complained" >
+  </div>
+  <div class="form-group">
+    <label>the complainer</label>
+    <input type="text"  class="form-control" name="id_complainer"  formControlName="id_complainer" >
+  </div>
+  <div class="form-group">
+    <label>the trip</label>
+    <input type="text"  class="form-control" name=" IdTrip"  formControlName="IdTrip" >
+  </div>
+  <div class="boutonAddcomplaint"><input type="submit" class="btn btn-success" value="Submit"> </div>
+</form>
+

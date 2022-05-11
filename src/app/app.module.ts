@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,27 +12,36 @@ import { ChatComponent } from './components/chat/chat.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TravelComponent } from './components/travel/travel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddtravelComponent } from './components/travel/addtravel/addtravel.component';
-import { EdittravelComponent } from './components/travel/edittravel/edittravel.component';
 import { CommonModule } from '@angular/common';
-import { TravelplanningComponent } from './components/travelplanning/travelplanning.component';
-import { VeiwPlanningsComponent } from './components/travelplanning/veiw-plannings/veiw-plannings.component';
-import { OpportunityComponent } from './components/opportunity/opportunity.component';
-import { AddopportunityComponent } from './components/opportunity/addopportunity/addopportunity.component';
-import { EditopportunityComponent } from './components/opportunity/editopportunity/editopportunity.component';
-import { EditplanningComponent } from './components/travelplanning/editplanning/editplanning.component';
+import {ComplaintComponent} from "./components/complaint/complaint.component";
+import {AddcomplaintComponent} from "./components/complaint/addcomplaint/addcomplaint.component";
+import {ComplaintstatisticComponent} from "./components/complaint/complaintstatistic/complaintstatistic.component";
+import {StatisticsComponent} from "./components/complaint/statistics/statistics.component";
+import { GoogleChartsModule } from 'angular-google-charts';
+import {ReponseReclamationComponent} from "./components/complaint/reponse-reclamation/reponse-reclamation.component";
+import {
+  FormReponsereclamationComponent
+} from "./components/complaint/form-reponsereclamation/form-reponsereclamation.component";
+import {FormReclamationComponent} from "./components/complaint/form-reclamation/form-reclamation.component";
+import { ResponseByUserComponent } from './components/complaint/response-by-user/response-by-user.component';
+
 
 const routes: Routes = [
-  
+
   {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:'home', component:DashboardComponent},
   {path:'forum', component:ForumComponent},
   {path:'chat',component:ChatComponent},
   {path:"travel",component:TravelComponent},
-  {path:"edit",component:EdittravelComponent},
-  {path:"travel/:id",component:TravelplanningComponent},
-  {path:"view",component:VeiwPlanningsComponent},
-  {path:"opportunity",component:OpportunityComponent},
+  {path:"complaint",component:ComplaintComponent},
+{path:"complaint/add/",component:AddcomplaintComponent},
+  {path:"complaint/del:idComplaint",component:ComplaintComponent},
+  {path:"statistics",component:StatisticsComponent},
+  //{path:"C",component:ComplaintstatisticComponent},
+  {path:'espaceReclamation',component:ReponseReclamationComponent},
+  {path : 'listResponse' , component: ResponseByUserComponent}
+
+
 ];
 
 @NgModule({
@@ -45,24 +54,26 @@ const routes: Routes = [
     ForumComponent,
     ChatComponent,
     TravelComponent,
-    AddtravelComponent,
-    EdittravelComponent,
-    TravelplanningComponent,
-    VeiwPlanningsComponent,
-    OpportunityComponent,
-    AddopportunityComponent,
-    EditopportunityComponent,
-    EditplanningComponent,
-  
+   // EditopportunityComponent,
+    ComplaintComponent,
+    AddcomplaintComponent,
+    ComplaintstatisticComponent,
+    StatisticsComponent,
+    ReponseReclamationComponent,
+    FormReponsereclamationComponent,
+    FormReclamationComponent,
+    ResponseByUserComponent,
+
+
   ],
   imports: [
     BrowserModule,
-   RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
- 
     FormsModule,
     CommonModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

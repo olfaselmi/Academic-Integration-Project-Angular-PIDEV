@@ -1,0 +1,42 @@
+<html class="background">
+<div class="complaint-section" >
+  <table class="table-bordered" style="width: 100%;">
+    <thead>
+    <tr>
+      <th>the id</th>
+      <th>the topic</th>
+      <th>the state</th>
+      <th>the message</th>
+      <th>the date</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of c">
+      <th scope="row">{{c.idComplaint}}</th>
+      <td>{{c.topic}}</td>
+      <td>{{c.cloture}}</td>
+      <td>{{c.messageComplaint}}</td>
+      <td>{{c.dateComplaint|date}}</td>
+
+
+
+
+
+      <td><button (click)="deleteComplaint(c.idComplaint)" type="button" class="btn btn-danger"> <i class="fa fa-trash"></i></button> </td>
+      <td><button (click)="navigate(c.idComplaint , c.complainer.idUser)"  type="button" class="btn btn-success"> <i class="fa fa-eye"></i></button> </td>
+      <td><button  (click)="navigateToResponses(c.complainer.idUser)" type="button" class="btn btn-info"> <i class="fa fa-eye"></i></button> </td>
+
+    </tr>
+    </tbody>
+
+  </table>
+
+  <div>
+    <div scope="col">  <button class="btn btn-primary " (click)="showForm()">Add complaint</button></div>
+    <app-addcomplaint (aded)="addComplaint($event)" *ngIf="showAdd"></app-addcomplaint>
+  </div>
+</div>
+
+
+</html>
