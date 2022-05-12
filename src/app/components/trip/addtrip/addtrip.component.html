@@ -1,0 +1,44 @@
+
+
+<form  class="form-section" [formGroup]="myForm"  (ngSubmit)="add()">
+    <h1>create a new travel !</h1>
+    <div class="form-group">
+        <label>IdTrip</label>
+        <input type="text"  class="form-control" name="IdTrip"  formControlName="IdTrip"> 
+    </div>
+
+    <div class="form-group">
+        <label>Destination</label>
+        <input type="text"  class="form-control" name="Destination"  formControlName="Destination"> 
+    </div>
+   
+    <div class="form-group">
+    <label>DateBegin</label>
+    <input type="date" class="form-control" formControlName="DateBegin">
+    </div> 
+    <div class="form-group">
+        <label>DateEnd</label>
+        <input type="date"  class="form-control"  formControlName="endDate">
+        </div> 
+
+
+    <div class="form-group">
+        <label>Duration</label>
+        <input type="text"  class="form-control" name="Duration"  formControlName="Duration"> 
+    </div>
+
+    <div class="form-group">
+        <label>CodeMatche</label>
+        <input type="text"  class="form-control" name="CodeMatche"  formControlName="CodeMatche"> 
+    </div>
+    
+  <div class="boutonAddtrip"><input type="submit" class="btn btn-primary" value="Submit"> </div>
+  
+ <!--mouch feragh-->
+        
+</form>
+
+
+
+<router-outlet></router-outlet>
+

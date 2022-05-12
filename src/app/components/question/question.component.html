@@ -1,0 +1,103 @@
+<!-- <div class="Question-section ">
+   
+    <div> Search: <input type="text" [(ngModel)]="searchVal"/> </div>
+     <table class="table table-bordered table-striped table-hover" >
+         <thead>
+         <tr>
+            <th></th>
+         <th>qusetionId</th>
+         <th>content </th>
+         <th>optionA</th>
+         <th>optionB</th>           
+         <th>optionC </th>
+         <th>optionD</th>
+        <th>answer</th>
+         </tr>
+         </thead>
+         <tbody *ngFor="let u of ListQuestions; let position=index" >
+         <tr *ngIf="searchVal == '' || u.answer == searchVal || u.qusetionId == searchVal  ">  
+       
+         <td>{{u.qusetionId}}</td>
+         <td>{{u.content}}</td>
+         <td>{{u.optionA}}</td>
+         <td>{{u.optionB}}</td>
+         <td>{{u.optionC}}</td>
+         <td>{{u.optionD}}</td>
+         <td>{{u.answer}}</td>
+        
+
+         <td><button (click)="deletequestion(u.qusetionId)" type="button" class="btn btn-danger">DELETE</button> <div class=""></div>
+            
+         </tr>
+         
+      <div>
+          <div scope="col" class="boutonAddQuestion" >  <button class="bouton-addquestion " (click)="showForm()">Add Question</button></div>
+        
+     </div>
+    
+         </tbody>
+         </table> 
+ 
+  -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let u of ListQuestions; let position=index">
+            <h3>Question {{position}}</h3>
+            <p>{{u.content}}</p>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                    <label class="options">&nbsp;{{u.optionA}}
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <span class="checkmark"></span>
+                    <input type="radio" name="radio">
+                    <label class="options">&nbsp;{{u.optionB}}
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                    <label class="options">&nbsp;{{u.optionC}}
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                    <label class="options">&nbsp;{{u.optionD}}
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h4>Answer the question</h4>
+    <h4 class="float-right" *ngIf="result">Result : {{result.score}}</h4>
+
+    <form [formGroup]="myForm" (ngSubmit)="answer()">
+        <div class="row">
+            <div class="col-md-12">
+                <input id="float-input" type="number" placeholder="answers" class="form-control"
+                    formControlName="answer" pInputText>
+            </div>
+            <div class="col-md-12 mt-4">
+                <input id="float-input" type="number" placeholder="idp" class="form-control" formControlName="idp"
+                    pInputText>
+            </div>
+            <div class="col-md-12 mt-4">
+                <input id="float-input" type="number" placeholder="idq" class="form-control" formControlName="idq"
+                    pInputText>
+            </div>
+            <div class="col-md-12 mt-4 text-center">
+                <button type="submit" class="text-center btn btn-success">Answer</button>
+            </div>
+        </div>
+    </form>
+</div>

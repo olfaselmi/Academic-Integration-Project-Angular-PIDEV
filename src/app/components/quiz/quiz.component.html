@@ -1,0 +1,114 @@
+<p-accordion>
+   <p-accordionTab header="All Quizzes" [selected]="true">
+
+
+      <div class="Quiz-section ">
+
+
+
+         <div class="row">
+            <!-- <div class="col-md-2">
+         <div> Search: <input type="text" [(ngModel)]="searchVal" /> </div>
+      </div> -->
+            <div class="col-md-2">
+               <button class="btn btn-success" (click)="showModalDialog()">Add quizz</button>
+            </div>
+         </div>
+         <table class="table table-bordered table-striped table-hover">
+            <thead>
+               <tr>
+                  <th>codeReponse</th>
+                  <th></th>
+               </tr>
+            </thead>
+
+            <tbody *ngFor="let u of listQuiz; let position=index">
+               <tr>
+                  <!-- ||u.Metric.includes(searchVal)-->
+
+                  <td>{{u.codeReponse}}</td>
+
+
+                  <td><button type="button" class="btn btn-danger">DELETE</button>
+                     <div class=""></div>
+
+
+               </tr>
+
+
+
+            </tbody>
+
+         </table>
+
+         <p-dialog header="Add Quiz" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+            [draggable]="false" [resizable]="false">
+            <form [formGroup]="myForm" (ngSubmit)="add()">
+
+               <div class="container">
+                  <!-- <div class="row">
+               <div class="col-md-6 mt-4">
+                  <span class="p-float-label">
+                     <input id="float-input" type="text" class="form-control" formControlName="IdQuiz" pInputText>
+                     <label for="float-input">IdQuiz</label>
+                  </span>
+               </div>
+               <div class="col-md-6 mt-4">
+                  <span class="p-float-label">
+                     <input id="float-input" type="text" class="form-control" formControlName="codeReponse" pInputText>
+                     <label for="float-input">codeReponse</label>
+                  </span>
+               </div>
+            </div> -->
+                  <form class="form-section" [formGroup]="myForm" (ngSubmit)="add()">
+                     <div class="container">
+                        <div class="row">
+                           <!-- <div class="col-md-6 mt-4">
+                        <span class="p-float-label">
+                           <input id="float-input" type="number" class="form-control" formControlName="IdQuiz"
+                              pInputText>
+                           <label for="float-input">IdQuiz</label>
+                        </span>
+                     </div> -->
+                           <div class="col-md-6 mt-4">
+                              <span class="p-float-label">
+                                 <input id="float-input" type="number" class="form-control"
+                                    formControlName="codeReponse" pInputText>
+                                 <label for="float-input">codeReponse</label>
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+
+
+
+                     <p-button icon="pi pi-check" class="float-right mt-4" type="submit" label="Add"
+                        styleClass="p-button-text">
+                     </p-button>
+                  </form>
+               </div>
+
+            </form>
+         </p-dialog>
+      </div>
+   </p-accordionTab>
+   <p-accordionTab header="All Quizz by order">
+      <div class="Quiz-section ">
+         <form [formGroup]="myGetQuizzOrderForm" (ngSubmit)="getAllQuizzByOrder()">
+            <div class="row">
+               <div class="col-md-3 mb-4">
+                  <input type="number" placeholder="idqe" pInputText formControlName="idqe">
+               </div>
+               <div class="col-md-3 mb-4">
+                  <input type="number" placeholder="idq" pInputText formControlName="idq">
+               </div>
+               <div class="col-md-3">
+                  <button class="btn btn-success" type="submit">Search</button>
+               </div>
+            </div>
+         </form>
+         <div *ngIf="quizByOrderList"> Position {{quizByOrderList}}</div>
+      </div>
+   </p-accordionTab>
+
+</p-accordion>

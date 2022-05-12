@@ -1,0 +1,30 @@
+<div class="section">
+    <form class="" [formGroup]="myForm" (ngSubmit)="edit">
+        <input formControlName="IdProfil"  formControlName="IdProfil"  readonly>  
+        <div class="form-group">
+         
+            
+            <label>PWD</label>
+            <input type="text"   class="form-control" formControlName="pwd"> 
+    
+            <label>Metric</label>
+            <input type="text"   class="form-control" formControlName="metric"> 
+            
+            <label>Profession </label>
+            <input type="text"   class="form-control" formControlName="profession "> 
+     
+            <label>domain</label>
+            <input type="text" 
+            class="form-control" formControlName="domain">
+        </div> 
+      
+       
+       <div> 
+            <input type="submit" class="btn btn-primary" value="editprofil() " style="margin-top: 2%;" >     
+       </div>   
+       
+       <div> <input type="submit" class="btn btn-danger" routerLink="/Profil" value="annuler" style="margin-top: 2%;">   </div>  
+    </form>
+    </div>
+    
+    

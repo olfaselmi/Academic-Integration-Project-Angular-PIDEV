@@ -1,0 +1,174 @@
+<div class="Profil-section ">
+    <div>
+        <!-- <div scope="col" class="boutonAddProfil mb-4"> <button class="bouton-addprofil " (click)="showForm()">Add
+                Profil</button></div>
+        <app-addprofil (aded)="addprofil(0,$event)" *ngIf="showAdd"></app-addprofil> -->
+        <button type="button" (click)="showDialog()" class="btn btn-primary mb-4" icon="pi pi-info-circle"
+            label="Show">Add Profile</button>
+
+    </div>
+
+    <div> Search: <input type="text" [(ngModel)]="searchVal" /> </div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>idProfil</th>
+                <th>pwd</th>
+                <th>metric</th>
+                <th>profession</th>
+                <th>domain</th>
+                <th> followersNbr</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let u of ListProfils; let position=index">
+            <tr *ngIf="searchVal == '' || u.metric == searchVal || u.profession == searchVal  ">
+                <!-- ||u.Metric.includes(searchVal)-->
+
+                <td>{{u.idProfil}}</td>
+                <td>{{u.pwd}}</td>
+                <td>{{u.metric}}</td>
+                <td>{{u.profession}}</td>
+                <td>{{u.domain}}</td>
+                <td>{{u.followersNbr}}</td>
+
+
+                <td><button (click)="deleteprofil(u.idProfil)" type="button" class="btn btn-danger">DELETE</button>
+                    <div class=""></div>
+                <td><button type="button" class="btn btn-primary" (click)="showDialogEdit(u)"> Edit</button>
+                    <div class=""></div>
+                <td><button type="button" class="btn btn-success" (click)="getPopulaity(u.idProfil)"> <i
+                            class="fa fa-trophy" aria-hidden="true"></i>
+                    </button>
+                    <div class=""></div>
+            </tr>
+
+
+
+        </tbody>
+        <p-dialog header="Title" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+            [resizable]="false">
+
+            <form class="form-section" [formGroup]="myForm" (ngSubmit)="add(4)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="metric"
+                                    pInputText>
+                                <label for="float-input">Metric</label>
+                            </span>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="profession"
+                                    pInputText>
+                                <label for="float-input">Profession</label>
+                            </span>
+                        </div>
+
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="domain"
+                                    pInputText>
+                                <label for="float-input">Domain</label>
+                            </span>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="followersNbr"
+                                    pInputText>
+                                <label for="float-input">followersNbr</label>
+                            </span>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <span class="p-float-label">
+                                <p-password placeholder="password" formControlName="pwd" [toggleMask]="true">
+                                </p-password>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <p-button icon="pi pi-check" class="float-right mt-4" type="submit" (click)="showDialog()" label="Add"
+                    styleClass="p-button-text">
+                </p-button>
+            </form>
+        </p-dialog>
+
+        <p-dialog header="Edit" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+            [resizable]="false">
+            <form class="form-section" [formGroup]="myFormEdit" (ngSubmit)="update()">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="metric"
+                                    pInputText>
+                                <label for="float-input">Metric</label>
+                            </span>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="profession"
+                                    pInputText>
+                                <label for="float-input">Profession</label>
+                            </span>
+                        </div>
+
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="domain"
+                                    pInputText>
+                                <label for="float-input">Domain</label>
+                            </span>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <span class="p-float-label">
+                                <input id="float-input" type="text" class="form-control" formControlName="followersNbr"
+                                    pInputText>
+                                <label for="float-input">followersNbr</label>
+                            </span>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <span class="p-float-label">
+                                <p-password placeholder="password" formControlName="pwd" [toggleMask]="true">
+                                </p-password>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <p-button icon="pi pi-check" class="float-right mt-4" type="submit" (click)="closeDialogEdit()"
+                    label="update" styleClass="p-button-text">
+                </p-button>
+            </form>
+
+        </p-dialog>
+
+        <p-dialog header="Popularity" [(visible)]="displayPopularity" [modal]="true" [style]="{width: '50vw'}"
+            [draggable]="false" [resizable]="false">
+            <div class="container">
+
+                <img *ngIf="badge?.poupilarite === 'pouplar'" class="displayed"
+               
+                    src=" https://cdn5.vectorstock.com/i/1000x1000/53/39/celebrity-person-icon-simple-style-vector-30115339.jpg" />
+                <img *ngIf="badge?.poupilarite === 'superFamous'" class="displayed"
+                    src="https://cdn2.iconfinder.com/data/icons/people-79/100/Popular-02-512.png" />
+                <img *ngIf="badge?.poupilarite === 'famous'" class="displayed"
+                    src="https://icon-library.com/images/popular-icon/popular-icon-10.jpg" />
+
+                <p class="mt-4 text-center" *ngIf="badge?.badageQuizz">Congrats you are {{badge?.badageQuizz}} </p>
+                <h2 class="mt-4 text-center" *ngIf="badge?.reactiviteBadge === 'gold'">You have a golden badge <i
+                        class="fa fa-heart" style="color: gold;"></i> </h2>
+                <h2 class="mt-4 text-center" *ngIf="badge?.reactiviteBadge === 'silver'">You have a silver badge <i
+                        class="fa fa-heart" style="color: silver;"></i> </h2>
+                <h2 class="mt-4 text-center" *ngIf="badge?.reactiviteBadge === 'bronze'">You have a bronze badge <i
+                        class="fa fa-heart" style="color: #CD7F32;"></i> </h2>
+            </div>
+        </p-dialog>
+    </table>
