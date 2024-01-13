@@ -1,27 +1,30 @@
-# angularProj
+# Academic Integration Project - Angular PIDEV
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This repository holds the code for my academic integration project, which is a web application developed with Angular. It is designed to demonstrate a full-scale application structure that includes several key features and integrations.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The Academic Integration Project showcases the use of Angular in building scalable web applications. The project is structured to follow best practices and demonstrates clean code architecture, modular components, and responsive design.
 
-## Code scaffolding
+### Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Modern, responsive user interface.
+- Integration with backend services.
+- Dynamic post interface with CRUD operations.
+- Utilization of Angular services, routing, and state management.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run this project locally, follow these steps:
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js (preferably the latest stable version)
+- NPM (Node Package Manager)
+- Angular CLI (Command Line Interface)
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the repository:
+```bash
+git clone https://github.com/olfaselmi/Academic-Integration-Project-Angular-PIDEV.git
